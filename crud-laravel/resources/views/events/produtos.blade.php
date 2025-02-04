@@ -4,8 +4,8 @@
 
 <h1>Tela de produtos</h1>
 
-@if ($busca != '')
+{{-- @if ($busca != '')
     <p>O usuário está buscando por: {{ $busca }}</p>
-@endif
+@endif --}}
 
 @endsection

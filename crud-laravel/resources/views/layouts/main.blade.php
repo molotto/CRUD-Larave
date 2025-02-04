@@ -30,16 +30,26 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Criar eventos</a>
+                            <a href="/eventos/criar" class="nav-link">Criar eventos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/contato" class="nav-link">Contato</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/produtos" class="nav-link">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Cadastrar</a>
                         </li>
 
                         <li class="nav-item">
                             <a href="/" class="nav-link">Entrar</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Cadastrar</a>
-                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -48,10 +58,9 @@
         @yield('content')
 
     <footer>
-        <a href="/">Home</a>
-        <a href="/contato">Contatos</a>
-        <a href="/produtos">Produtos</a>
         <p>LRM Eventos &copy; 2025</p>
     </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
