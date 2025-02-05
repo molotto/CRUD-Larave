@@ -29,7 +29,7 @@
             <textarea name="description" id="description" class="form-control" placeholder="Descrição do evento"></textarea>
         </div>
 
-        <input type="submit" class="btn btn-primary" value="Criar evento">
+        <input type="submit" class="btn btn-primary" value="Criar evento" style="margin-top: 10px;">
 
     </form>
 </div>

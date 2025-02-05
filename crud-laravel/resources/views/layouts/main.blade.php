@@ -48,12 +48,32 @@
             </nav>
         </header>
 
-        @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="msg">{{ session('msg') }}</p>
+                    @endif
+                    @yield('content');
+                </div>
+            </div>
+        </main>
 
     <footer>
         <p>LRM Eventos &copy; 2025</p>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                var msg = document.querySelector(".msg");
+                if (msg) {
+                    msg.style.opacity = "0";
+                    setTimeout(() => msg.remove(), 500); // Remove o elemento do DOM após a transição
+                }
+            }, 5000); // 5 segundos
+        });
+    </script>
     </body>
 </html>
