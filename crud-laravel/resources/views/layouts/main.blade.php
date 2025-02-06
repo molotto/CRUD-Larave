@@ -40,9 +40,6 @@
                         <li class="nav-item">
                             <a href="/" class="nav-link">Cadastrar</a>
                         </li>
-
-
-
                     </ul>
                 </div>
             </nav>
@@ -54,7 +51,7 @@
                     @if(session('msg'))
                         <p class="msg">{{ session('msg') }}</p>
                     @endif
-                    @yield('content');
+                    @yield('content')
                 </div>
             </div>
         </main>
