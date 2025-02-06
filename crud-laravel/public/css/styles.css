@@ -40,23 +40,6 @@ header {
     margin-bottom: 0px;
     text-align: center;
     padding: 10px;
-
-/*? balãozinho
-    background-color: #D4EDDA;
-    color: #155424;
-    border: 1px solid #C3E6CB;
-    width: auto;
-    max-width: 300px;
-    text-align: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out; */
 }
 
 
@@ -139,6 +122,7 @@ header {
     max-height: 300px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    object-fit: cover;
 }
 
 .card .card-date {
@@ -173,6 +157,50 @@ header {
 #event-create-container textarea {
     font-size: 16px;
 }
+
+/*! Event page --------------------------*/
+
+
+#image-container,
+#info-container {
+    margin-top: 30px;
+}
+
+#image-container img {
+    max-width: 700px; /* Ajuste conforme necessário */
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Opcional, deixa as bordas arredondadas */
+}
+
+#info-container h1 {
+    font-size: 44px;
+    font-weight: 900;
+    color: #f2a340;
+}
+
+#info-container p {
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+}
+
+#info-container h3,
+#description-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#info-container ion-icon {
+    font-size: 28px;
+    color: #f2a340;
+    margin-right: 5px;
+}
+
+#info-container #event-submit {
+    margin: 20px 0;
+}
+
 
 /*! Footer --------------------------*/
 
