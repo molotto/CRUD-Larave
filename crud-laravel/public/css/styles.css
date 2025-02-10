@@ -126,13 +126,13 @@ header {
 }
 
 .card .card-date {
-    font-size: 12px;
+    font-size: 14px;
     color: #ccc;
 }
 
 .card .card-title {
     color: #212121;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -150,6 +150,7 @@ header {
 
 #event-create-container label {
     font-weight: bold;
+    font-size: 20px;
 }
 
 #event-create-container input,
@@ -157,6 +158,7 @@ header {
 #event-create-container textarea {
     font-size: 16px;
 }
+
 
 /*! Event page --------------------------*/
 
@@ -200,6 +202,19 @@ header {
 #info-container #event-submit {
     margin: 20px 0;
 }
+
+
+#items-list  {
+    list-style: none;
+    padding-left: 0;
+}
+
+#items-list li {
+    display: flex;
+    font-size: 20px;
+    text-decoration: underline dashed #f2a340 4px;
+}
+
 
 
 /*! Footer --------------------------*/
