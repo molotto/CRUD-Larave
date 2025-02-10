@@ -4,40 +4,46 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
 
         $search = request('search');
 
-        if($search) {
+        if ($search) {
 
             $events = Event::where([
-                ['title', 'like', '%'.$search.'%']
+                ['title', 'like', '%' . $search . '%']
             ])->get();
-
         } else {
             $events = Event::all();
         }
-    
-        return view('welcome',['events' => $events, 'search' => $search]);
+
+        return view('welcome', ['events' => $events, 'search' => $search]);
     }
 
-    public function create() {
+    public function create()
+    {
         return view('events.create');
     }
 
-    public function contato() {
+    public function contato()
+    {
         return view('events.contato');
     }
 
-    public function produtos() {
+    public function produtos()
+    {
         return view('events.produtos');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $event = new Event;
 
         $event->title = $request->title;
@@ -54,22 +60,36 @@ class EventController extends Controller
             $extension = $requestImage->extension();
 
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-            
+
             $request->image->move(public_path('img/events'), $imageName);
 
             $event->image = $imageName;
         }
 
-        $event -> save();
+        $user = Auth::user();
+        $event->user_id = $user->id;
+
+        $event->save();
 
         return redirect('/')->with('msg', 'Evento criado com sucesso!');
     }
 
-    public function show($id) {
+    public function show($id)
+    {
 
         $event = Event::findOrFail($id);
-        return view('events.show', ['event' => $event]);
+
+        $eventOwner = User::where('id', $event->user_id)->first()->toArray();
+
+        return view('events.show', ['event' => $event, 'eventOwner' => $eventOwner]);
     }
 
-}
 
+    public function dashboard() {
+
+        $user = Auth::user();
+        $events = $user->events;
+
+        return view('events.dashboard', ['events' => $events]);
+    }
+}
