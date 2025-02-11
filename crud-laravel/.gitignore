@@ -21,3 +21,13 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/bootstrap/cache
+/database/*.sqlite
+/database/*.sqlite3
+/database/*.log
+/database/*.sql
+/database/seeds/*.log
+/database/seeds/*.sql
+composer.lock
+package-lock.json
+

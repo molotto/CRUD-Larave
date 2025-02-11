@@ -234,6 +234,10 @@ header {
 }
 
 
+.dashboard-events-container form {
+    display: inline-block;
+}
+
 
 
 

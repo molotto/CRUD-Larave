@@ -8,7 +8,7 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/eventos/criar', [EventController::class, 'create'])->middleware('auth');
 Route::get('/eventos/{id}', [EventController::class, 'show']);
 Route::post('/eventos', [EventController::class, 'store']);
-
+Route::delete('/eventos/{id}', [EventController::class, 'destroy']);
 
 Route::get('/contato', [EventController::class, 'contato']);
 
