@@ -85,7 +85,8 @@ class EventController extends Controller
     }
 
 
-    public function dashboard() {
+    public function dashboard()
+    {
 
         $user = Auth::user();
         $events = $user->events;
@@ -93,8 +94,9 @@ class EventController extends Controller
         return view('events.dashboard', ['events' => $events]);
     }
 
-    
-    public function destroy($id) {
+
+    public function destroy($id)
+    {
 
         Event::findOrFail($id)->delete();
 
@@ -102,15 +104,17 @@ class EventController extends Controller
     }
 
 
-    public function edit($id) {
+    public function edit($id)
+    {
 
         $event = Event::findOrFail($id);
 
-        return view('events.edit', ['event' => $event]);        
+        return view('events.edit', ['event' => $event]);
     }
 
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
 
         $data = $request->all();
 
@@ -129,5 +133,17 @@ class EventController extends Controller
         Event::findOrFail($request->id)->update($data);
 
         return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
+    }
+
+    public function joinEvent($id) {
+
+        $user = Auth::user();
+
+        $user->eventsAsParticipant()->attach($id);
+
+        $event = Event::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', "Sua presença está confirmada no evento: " . $event->title );
+
     }
 }
