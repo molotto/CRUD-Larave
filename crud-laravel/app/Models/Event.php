@@ -3,16 +3,18 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Event extends Model
 {
     protected $casts = [
-        'items' => 'array'
+        'items' => 'array',
+        'date' => 'datetime'
     ];
-
-    protected $dates = ['date'];
 
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
+    protected $guarded = [];
 }
