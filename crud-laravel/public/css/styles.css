@@ -42,6 +42,15 @@ header {
     padding: 10px;
 }
 
+#info-container .already-joined-msg {
+    margin: 15px 0;
+    color: #004085;
+    background-color: #CCE5FF;
+    border: 1px solid #b8daff;
+    padding: 10px;
+    width: 400px;
+}
+
 
 /*! navbar -----------------------------------*/
 
@@ -245,11 +254,6 @@ header {
     width: 100px;
     margin-top: 20px;
 }
-
-
-
-
-
 
 /*! Footer --------------------------*/
 
